@@ -1,11 +1,24 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Building2, Bell, Search, Settings, LogOut } from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
-import { Button } from '../ui/Button';
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  Building2,
+  Bell,
+  Search,
+  Settings,
+  LogOut,
+  CreditCard,
+} from "lucide-react"; // <-- CreditCard icon add kiya payments ke liye
+import { useAuth } from "../../contexts/AuthContext";
+import { Button } from "../ui/Button";
 
 const defaultUserIcon = (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <circle cx="12" cy="8" r="5" fill="#bbb" />
     <path d="M4 20c0-3.3137 3.134-6 7-6s7 2.6863 7 6" fill="#bbb" />
   </svg>
@@ -18,6 +31,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
   const { user, logout } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
@@ -33,30 +47,43 @@ export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
             onClick={() => setSidebarOpen(true)}
             aria-label="Open menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
+
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <Building2 className="w-8 h-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900 dark:text-white">Business Nexus</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">
+              Business Nexus
+            </span>
           </Link>
 
           {/* Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-md mx-8">
+          <div className="hidden lg:flex flex-1 max-w-xs mx-4">
             <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <input
                 type="text"
-                placeholder="Search entrepreneurs, investors..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
+                placeholder="Search portal..."
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors text-sm"
               />
             </div>
           </div>
 
           {/* User Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 flex-shrink-0">
             <button className="relative p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
               <Bell className="w-5 h-5" />
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
@@ -65,8 +92,12 @@ export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
             <div className="flex items-center space-x-3">
               {defaultUserIcon}
               <div className="hidden md:block">
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{user?.name}</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">{user?.role}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                  {user?.name}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">
+                  {user?.role}
+                </p>
               </div>
             </div>
 

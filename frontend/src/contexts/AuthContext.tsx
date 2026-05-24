@@ -33,7 +33,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Auto login from localStorage
   useEffect(() => {
     const savedUser = localStorage.getItem("currentUser");
     if (savedUser) {

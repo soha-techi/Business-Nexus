@@ -23,7 +23,6 @@ export const RegisterPage: React.FC = () => {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [success, setSuccess] = useState(false);
 
-  // Milestone 6: Password Strength Logic
   const [passwordStrength, setPasswordStrength] = useState({
     score: 0,
     label: "Too Short",
@@ -47,9 +46,9 @@ export const RegisterPage: React.FC = () => {
 
     let currentScore = 1;
     // Check points
-    if (/[A-Z]/.test(pass)) currentScore++; // Has uppercase
-    if (/[0-9]/.test(pass)) currentScore++; // Has numbers
-    if (/[^A-Za-z0-9]/.test(pass)) currentScore++; // Has special characters
+    if (/[A-Z]/.test(pass)) currentScore++;
+    if (/[0-9]/.test(pass)) currentScore++;
+    if (/[^A-Za-z0-9]/.test(pass)) currentScore++;
 
     if (currentScore === 1) {
       setPasswordStrength({ score: 1, label: "Weak", color: "bg-red-500" });
@@ -226,7 +225,7 @@ export const RegisterPage: React.FC = () => {
                 />
               </div>
 
-              {/* Password field with Live Strength Meter */}
+              {/* */}
               <div className="relative space-y-1">
                 <Input
                   icon={Lock}
@@ -246,7 +245,7 @@ export const RegisterPage: React.FC = () => {
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
 
-                {/* Live Indicator UI Component */}
+                {/* */}
                 {formData.password && (
                   <div className="pt-1 px-1">
                     <div className="flex justify-between text-xs mb-1 font-medium">

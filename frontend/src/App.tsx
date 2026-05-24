@@ -38,7 +38,7 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
 
-              {/* GROUP 1: Purane Pages (Kyunki inke andar apna Layout pehle se laga hai) */}
+              {/* */}
               <Route
                 element={
                   <ProtectedRoute>
@@ -69,7 +69,7 @@ function App() {
                 <Route path="/settings" element={<SettingsPage />} />
               </Route>
 
-              {/* GROUP 2: Naye Pages (Inhe Layout ki zaroorat hai, tabhi right side par khulenge) */}
+              {/*  */}
               <Route
                 element={
                   <ProtectedRoute>

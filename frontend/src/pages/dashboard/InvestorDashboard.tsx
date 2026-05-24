@@ -33,8 +33,6 @@ export const InvestorDashboard: React.FC = () => {
     messages: 0,
   });
 
-  // ... (fetch functions same as before)
-
   useEffect(() => {
     fetchEntrepreneurs();
     fetchStats();
@@ -109,7 +107,7 @@ export const InvestorDashboard: React.FC = () => {
         </Button>
       </div>
 
-      {/* ===== 4 Stats Cards ===== */}
+      {/* */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card>
           <CardContent className="p-6">
@@ -164,7 +162,7 @@ export const InvestorDashboard: React.FC = () => {
         </Card>
       </div>
 
-      {/* ===== Confirmed Meetings Section ===== */}
+      {/* */}
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -221,12 +219,12 @@ export const InvestorDashboard: React.FC = () => {
         </CardContent>
       </Card>
 
-      {/* Baaki Entrepreneurs List (Existing) */}
+      {/*  */}
       <div>
         <h2 className="text-xl font-bold mb-4">
           Available Entrepreneurs ({entrepreneurs.length})
         </h2>
-        {/* ... existing entrepreneurs mapping code ... */}
+        {/*  */}
       </div>
     </div>
   );

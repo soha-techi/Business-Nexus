@@ -15,7 +15,6 @@ export const LoginPage: React.FC = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
 
-  // Milestone 6: 2FA State Management
   const [step, setStep] = useState<1 | 2>(1);
   const [otp, setOtp] = useState("");
   const [otpError, setOtpError] = useState("");
@@ -24,10 +23,9 @@ export const LoginPage: React.FC = () => {
     e.preventDefault();
     setOtpError("");
 
-    // Pehle initial credentials verify honge, phir OTP step aayega
     const success = await login(formData.email, formData.password);
     if (success) {
-      setStep(2); // Move to OTP step mockup
+      setStep(2);
     }
   };
 
@@ -66,7 +64,7 @@ export const LoginPage: React.FC = () => {
           </CardHeader>
 
           <CardContent>
-            {/* Error alerts */}
+            {/* */}
             {authError && step === 1 && (
               <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
                 <p className="text-red-600 dark:text-red-400 text-sm">
@@ -83,7 +81,7 @@ export const LoginPage: React.FC = () => {
               </div>
             )}
 
-            {/* STEP 1: Email & Password Form */}
+            {/* */}
             {step === 1 && (
               <form onSubmit={handleCredentialSubmit} className="space-y-4">
                 <div>
@@ -124,7 +122,7 @@ export const LoginPage: React.FC = () => {
               </form>
             )}
 
-            {/* STEP 2: 2FA OTP Input Block */}
+            {/*  */}
             {step === 2 && (
               <form onSubmit={handleOtpSubmit} className="space-y-5">
                 <div>

@@ -13,9 +13,8 @@ export const DashboardPage: React.FC = () => {
     );
   }
 
-  console.log("🔍 Current User:", user.name, "| Role:", user.role); // Debugging
+  console.log("🔍 Current User:", user.name, "| Role:", user.role);
 
-  // Safe role check
   const isEntrepreneur = user.role?.toLowerCase().trim() === "entrepreneur";
 
   return (

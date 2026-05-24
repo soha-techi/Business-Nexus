@@ -15,7 +15,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Listen for focus events to refresh data when user returns to tab
   useEffect(() => {
     const handleFocus = () => {
       if (onRefresh) {
@@ -29,18 +28,18 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors relative">
-      {/* 1. Top Navbar */}
+      {/* */}
       <Navbar setSidebarOpen={setSidebarOpen} />
 
       <div className="flex h-[calc(100vh-4rem)]">
-        {/* 2. Sidebar Navigation */}
+        {/* */}
         <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-        {/* 3. Main Dynamic Content Pages */}
+        {/* */}
         <main className="flex-1 overflow-auto p-6">{children}</main>
       </div>
 
-      {/* ⭐ MILESTONE 7: Guided Tour Button floating perfectly at the bottom-right */}
+      {/**/}
       <GuidedTour />
     </div>
   );

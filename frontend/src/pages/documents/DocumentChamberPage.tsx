@@ -24,7 +24,6 @@ interface DocumentItem {
 }
 
 export const DocumentChamberPage: React.FC = () => {
-  // Is bar strict reference element ensure karne ke liye HTMLCanvasElement pattern set kiya hai
   const sigPad = useRef<SignatureCanvas | null>(null);
 
   const [documents, setDocuments] = useState<DocumentItem[]>([
@@ -57,7 +56,6 @@ export const DocumentChamberPage: React.FC = () => {
 
   const saveSignature = () => {
     if (sigPad.current) {
-      // Direct raw data check wrapper taake system empty trace na kare
       const canvasInstance = sigPad.current.getCanvas();
 
       if (!canvasInstance || sigPad.current.isEmpty()) {
@@ -65,7 +63,6 @@ export const DocumentChamberPage: React.FC = () => {
         return;
       }
 
-      // Safe image formatting capturing
       const signatureDataUrl = canvasInstance.toDataURL("image/png");
 
       if (selectedDoc) {
@@ -190,7 +187,7 @@ export const DocumentChamberPage: React.FC = () => {
                     platform rules compliance protocols.
                   </p>
 
-                  {/* Real Signature Rendering Box */}
+                  {/* */}
                   {selectedDoc.savedSignatureUrl && (
                     <div className="mt-6 border-t pt-4 border-dashed border-gray-300 dark:border-gray-700 flex flex-col items-end">
                       <p className="text-xs font-sans text-gray-400 uppercase tracking-wider mb-1">
@@ -229,7 +226,7 @@ export const DocumentChamberPage: React.FC = () => {
                     </div>
                   ) : (
                     <div className="space-y-3">
-                      {/* Fixed Inner Dimensions Wrapper layout */}
+                      {/*  */}
                       <div className="border border-gray-200 dark:border-gray-700 rounded-xl bg-white overflow-hidden shadow-sm">
                         <SignatureCanvas
                           ref={sigPad}

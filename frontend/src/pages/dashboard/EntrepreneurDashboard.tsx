@@ -6,7 +6,7 @@ import {
   FileText,
   DollarSign,
   Eye,
-  Calendar, // <-- Calendar icon add kiya yahan
+  Calendar,
 } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { usersAPI, requestsAPI } from "../../services/api";
@@ -68,7 +68,7 @@ const defaultUserIcon = (
 
 export const EntrepreneurDashboard: React.FC = () => {
   const { user } = useAuth();
-  const { events } = useCalendar(); // <-- Calendar events hooks se extract kiye
+  const { events } = useCalendar();
   const navigate = useNavigate();
   const [investors, setInvestors] = useState<Investor[]>([]);
   const [requests, setRequests] = useState<Request[]>([]);
@@ -243,7 +243,7 @@ export const EntrepreneurDashboard: React.FC = () => {
         })}
       </div>
 
-      {/* NEW CARD SECTION: Confirmed Meetings Card Layout */}
+      {/*  */}
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <div className="flex items-center gap-2">
@@ -301,7 +301,7 @@ export const EntrepreneurDashboard: React.FC = () => {
         </CardContent>
       </Card>
 
-      {/* Recent Activity */}
+      {/* */}
       <Card>
         <CardHeader>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -341,7 +341,7 @@ export const EntrepreneurDashboard: React.FC = () => {
         </CardContent>
       </Card>
 
-      {/* Recent Investors */}
+      {/* */}
       <Card>
         <CardHeader>
           <div className="flex justify-between items-center">
@@ -394,7 +394,7 @@ export const EntrepreneurDashboard: React.FC = () => {
         </CardContent>
       </Card>
 
-      {/* Pending Requests */}
+      {/*  */}
       {pendingRequests.length > 0 && (
         <div>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
@@ -422,7 +422,7 @@ export const EntrepreneurDashboard: React.FC = () => {
         </div>
       )}
 
-      {/* Accepted Connections */}
+      {/* */}
       {acceptedRequests.length > 0 && (
         <div>
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">

@@ -24,7 +24,6 @@ const MeetingCalendar = () => {
 
   const handleEventClick = (clickInfo: any) => {
     if (confirm(`Delete this meeting?\n\n${clickInfo.event.title}`)) {
-      // Delete functionality baad mein add karenge
       alert("Delete feature coming soon");
     }
   };
@@ -43,7 +42,7 @@ const MeetingCalendar = () => {
       backgroundColor: "#3b82f6",
     };
 
-    addEvent(newEvent); // ← Context mein save ho raha hai
+    addEvent(newEvent);
     setShowModal(false);
     alert("✅ Meeting Scheduled Successfully!");
   };
@@ -67,7 +66,7 @@ const MeetingCalendar = () => {
         slotMaxTime="21:00:00"
       />
 
-      {/* Modal Same as before */}
+      {/* */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl p-8 w-full max-w-md mx-4">

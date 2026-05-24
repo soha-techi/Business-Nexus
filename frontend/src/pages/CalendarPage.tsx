@@ -4,7 +4,7 @@ import MeetingCalendar from "../components/Calendar/MeetingCalendar";
 const CalendarPage = () => {
   return (
     <div className="p-6 max-w-7xl mx-auto space-y-8">
-      {/* Header Area (Bina Back Button Ke) */}
+      {/* Header Area  */}
       <div>
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white transition-colors">
           Meeting Scheduler

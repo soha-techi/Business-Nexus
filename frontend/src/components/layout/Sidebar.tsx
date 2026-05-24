@@ -9,8 +9,8 @@ import {
   Settings,
   Calendar,
   Wallet,
-  Video,       // <-- Conference Room ke liye video icon add kiya
-  Briefcase,   // <-- Document Chamber ke liye briefcase icon add kiya
+  Video,
+  Briefcase,
 } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -25,35 +25,31 @@ export const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // Investor Menu Items
   const investorMenuItems = [
     { path: "/dashboard", icon: Home, label: "Dashboard" },
     { path: "/entrepreneurs", icon: Users, label: "Entrepreneurs" },
     { path: "/requests", icon: FileText, label: "My Requests" },
     { path: "/messages", icon: MessageCircle, label: "Messages" },
-    
-    // Naye Sections add kiye tarteeb se
+
     { path: "/video-room", icon: Video, label: "Conference Room" },
     { path: "/document-chamber", icon: Briefcase, label: "Document Chamber" },
     { path: "/payments", icon: Wallet, label: "Payments Wallet" },
-    
+
     { path: "/calendar", icon: Calendar, label: "Meeting Calendar" },
     { path: "/profile", icon: User, label: "Profile" },
     { path: "/settings", icon: Settings, label: "Settings" },
   ];
 
-  // Entrepreneur Menu Items
   const entrepreneurMenuItems = [
     { path: "/dashboard", icon: Home, label: "Dashboard" },
     { path: "/investors", icon: Users, label: "Investors" },
     { path: "/requests", icon: FileText, label: "Requests" },
     { path: "/messages", icon: MessageCircle, label: "Messages" },
-    
-    // Naye Sections add kiye tarteeb se
+
     { path: "/video-room", icon: Video, label: "Conference Room" },
     { path: "/document-chamber", icon: Briefcase, label: "Document Chamber" },
     { path: "/payments", icon: Wallet, label: "Payments Wallet" },
-    
+
     { path: "/calendar", icon: Calendar, label: "Meeting Calendar" },
     { path: "/profile", icon: User, label: "Profile" },
     { path: "/settings", icon: Settings, label: "Settings" },
@@ -64,7 +60,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
 
   return (
     <>
-      {/* Sidebar for desktop */}
+      {/* */}
       <div className="hidden md:block w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 h-full transition-colors flex-shrink-0">
         <div className="p-6 h-full overflow-y-auto custom-scrollbar">
           <div className="space-y-2">
@@ -89,7 +85,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
         </div>
       </div>
 
-      {/* Sidebar overlay for mobile */}
+      {/* */}
       {open && (
         <>
           <div

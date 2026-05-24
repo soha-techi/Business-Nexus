@@ -7,7 +7,7 @@ import {
   Settings,
   LogOut,
   CreditCard,
-} from "lucide-react"; // <-- CreditCard icon add kiya payments ke liye
+} from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { Button } from "../ui/Button";
 
@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
     <nav className="bg-white dark:bg-gray-800 shadow-lg border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Hamburger for mobile */}
+          {/* */}
           <button
             className="md:hidden mr-2"
             onClick={() => setSidebarOpen(true)}
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
             </svg>
           </button>
 
-          {/* Logo */}
+          {/* */}
           <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
             <Building2 className="w-8 h-8 text-blue-600" />
             <span className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
             </span>
           </Link>
 
-          {/* Search Bar */}
+          {/*  */}
           <div className="hidden lg:flex flex-1 max-w-xs mx-4">
             <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ setSidebarOpen }) => {
             </div>
           </div>
 
-          {/* User Actions */}
+          {/* */}
           <div className="flex items-center space-x-4 flex-shrink-0">
             <button className="relative p-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
               <Bell className="w-5 h-5" />
